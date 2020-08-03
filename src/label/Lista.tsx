@@ -1,5 +1,6 @@
 import React from 'react';
-import 'materialize-css/dist/css/materialize.min.css'
+//import 'materialize-css/dist/css/materialize.min.css'
+import './lista.css'
 
 interface Label {
     text: string
@@ -17,7 +18,7 @@ class Lista extends React.Component<Props> {
         const linhas = label.map((linha: Label, index: number) => {
             return(
                 <div className="row" key={index}>
-                    <div className={`col s1 ${linha.color}`}>{linha.text}</div>
+                    <div className={`minhaclasse col s1 ${linha.color}`}>{linha.text}</div>
                 </div>
             )
         });
