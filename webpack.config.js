@@ -1,7 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 
 let plugins = [];
 
@@ -16,9 +15,10 @@ plugins.push(
 );
 
 module.exports = {
+    mode: 'development',
+    
     entry: {
-        index: './src/index.tsx',
-        lista: './src/label/Lista.tsx'
+        label: './src/label/Lista.tsx'
     },
 
     module: {
@@ -36,7 +36,7 @@ module.exports = {
     },
 
     output: {
-        filename: '[name]/[name].js',
+        filename: '[name]/bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
 
