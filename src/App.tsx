@@ -1,8 +1,9 @@
 import React from 'react';
 
 import './App.css';
-import Lista, { Label } from './label/Lista';
 import Form from './label/Formulario';
+import Etiqueta from './label/Etiqueta';
+import { Label } from './label/Lista';
 
 class App extends React.Component {
   
@@ -38,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="container mb-10">
         <Form escutadorDeSubmit = {this.escutadorDeSubmit} />
-        <Lista label={this.state.labels} />
+        <Etiqueta label = {this.state.labels} />
       </div>
     );
   }
