@@ -13,11 +13,14 @@ class Formulario extends React.Component<InputProps> {
         this.state = '';
     }
 
-    //capturar parametros atraves do estado do componete
-    state = {
+    escutadorDeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = event.target;
 
+        this.setState({
+            [name]: value
+        })
     }
-
+    
     submitForm = () => {
         this.props.escutadorDeSubmit({text: 'Green', color: 'green lighten-3'});
     }
@@ -33,6 +36,7 @@ class Formulario extends React.Component<InputProps> {
                         id="nome"
                         type="text"
                         name="nome"
+                        onChange={this.escutadorDeInput}
                     />
                 </div>
 
