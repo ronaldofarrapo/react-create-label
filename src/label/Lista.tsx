@@ -1,8 +1,8 @@
 import React from 'react';
-//import 'materialize-css/dist/css/materialize.min.css'
+import 'materialize-css/dist/css/materialize.min.css'
 import './lista.css'
 
-interface Label {
+export interface Label {
     text: string
     color: string
 }
