@@ -1,6 +1,7 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
 import './lista.css'
+import Close from '@material-ui/icons/Close'
 import Label from './index'
 
 interface Props {
@@ -15,6 +16,7 @@ class Lista extends React.Component<Props> {
             return(
                 <div className={`chip ${linha.color}`} key={index}>
                     {linha.text}
+                    <Close className="close" />
                 </div>
             )
         });
