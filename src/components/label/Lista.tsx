@@ -13,8 +13,8 @@ class Lista extends React.Component<Props> {
 
         const linhas = label.map((linha: Label, index: number) => {
             return(
-                <div className="row" key={index}>
-                    <div className={`minhaclasse col s1 ${linha.color}`}>{linha.text}</div>
+                <div className={`chip ${linha.color}`} key={index}>
+                    {linha.text}
                 </div>
             )
         });

@@ -1,8 +1,7 @@
 import React from 'react';
 
-import './App.css';
-import Etiqueta from './label/Etiqueta';
-import Label from './label';
+import Etiqueta from './components/label/Etiqueta';
+import Label from './components/label';
 
 class App extends React.Component {
   
