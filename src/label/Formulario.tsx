@@ -63,10 +63,6 @@ class Formulario extends React.Component<ComponentProps, ComponentState> {
             return label.text !== value;
         });
 
-        if(achou){
-            console.log(achou);
-        }
-
         this.setState({
 
         })
