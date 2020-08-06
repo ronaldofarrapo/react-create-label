@@ -1,50 +1,91 @@
 import React from 'react';
-import { Label } from './Lista';
+import Label from './index';
 
-interface InputProps {
+
+const TableColors = () => {
+    return (
+        <div className="row">
+            <table className="centered highlight">
+                <tbody>
+                    <tr>
+                        <td className="light-blue lighten-5"></td>
+                        <td className="light-blue lighten-4"></td>
+                        <td className="light-blue lighten-3"></td>
+                        <td className="light-blue lighten-2"></td>
+                        <td className="light-blue lighten-1"></td>
+                        <td className="light-blue"></td>
+                        <td className="light-blue darken-1"></td>
+                    </tr>
+                    <tr>
+                        <td className="cyan lighten-5"></td>
+                        <td className="cyan lighten-4"></td>
+                        <td className="cyan lighten-3"></td>
+                        <td className="cyan lighten-2"></td>
+                        <td className="cyan lighten-1"></td>
+                        <td className="cyan"></td>
+                        <td className="cyan darken-1"></td>
+                    </tr>  
+                </tbody>       
+            </table>
+        </div>
+    )
+}
+
+const LabelChips = () => {
+    return (
+        <div className="chip">
+            Tag
+            <i className="close material-icons">close</i>
+      </div>        
+    )
+}
+
+interface ComponentProps {
     escutadorDeSubmit: (label: Label) => void;
 }
 
-class Formulario extends React.Component<InputProps> {
+interface ComponentState {
+    labelsCadastradas: Label[];
+}
 
-    constructor(props: InputProps){
+class Formulario extends React.Component<ComponentProps, ComponentState> {
+    
+    constructor(props: ComponentProps){
         super(props);
 
-        this.state = '';
+        this.state = {labelsCadastradas: [{text: 'Green', color: 'green lighten-3'}] };
     }
 
     escutadorDeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = event.target;
+        const {value} = event.target;
+
+        const achou = this.state.labelsCadastradas.map(label => {
+            return label.text !== value;
+        });
+
+        if(achou){
+            console.log(achou);
+        }
 
         this.setState({
-            [name]: value
+
         })
-    }
-    
-    submitForm = () => {
-        this.props.escutadorDeSubmit({text: 'Green', color: 'green lighten-3'});
     }
 
     render() {
-        //capturar parametros através das propriedades
-        //const { propriedades } = this.props;
 
         return (
-            <form>
-                <div className="row">
-                    <input 
-                        id="nome"
-                        type="text"
-                        name="nome"
-                        onChange={this.escutadorDeInput}
-                    />
-                </div>
-
-                <button onClick={this.submitForm} className="btn waves-effect waves-light" type="button" name="action">
-                    Send
-                </button>
-
-            </form>
+            <>
+                <form>
+                    <div className="input-field">
+                        <input type="text" 
+                            id="autocomplete-input" 
+                            className="autocomplete"
+                            name="label"
+                            onChange={this.escutadorDeInput} />
+                    </div>
+                </form>
+            </>
         )
     }
 }

@@ -1,11 +1,7 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
 import './lista.css'
-
-export interface Label {
-    text: string
-    color: string
-}
+import Label from './index'
 
 interface Props {
     label: Label[]
