@@ -41,7 +41,7 @@ const LabelChips = () => {
 }
 
 interface ComponentProps {
-    //escutadorDeSubmit: (label: Label) => void;
+    add: (label: Label) => void;
 }
 
 interface ComponentState {
@@ -56,16 +56,8 @@ class Formulario extends React.Component<ComponentProps, ComponentState> {
         this.state = {labelsCadastradas: [{text: 'Green', color: 'green lighten-3'}] };
     }
 
-    escutadorDeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    inputListener = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
-
-        const achou = this.state.labelsCadastradas.map(label => {
-            return label.text !== value;
-        });
-
-        this.setState({
-
-        })
     }
 
     render() {
@@ -78,7 +70,7 @@ class Formulario extends React.Component<ComponentProps, ComponentState> {
                             id="autocomplete-input" 
                             className="autocomplete"
                             name="label"
-                            onChange={this.escutadorDeInput} />
+                            onChange={this.inputListener} />
                     </div>
                 </form>
             </>
