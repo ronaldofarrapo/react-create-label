@@ -41,7 +41,7 @@ const LabelChips = () => {
 }
 
 interface ComponentProps {
-    escutadorDeSubmit: (label: Label) => void;
+    //escutadorDeSubmit: (label: Label) => void;
 }
 
 interface ComponentState {

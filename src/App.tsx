@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Etiqueta from './components/label/Etiqueta';
-import Label from './components/label';
 
 class App extends React.Component {
   
@@ -29,14 +28,20 @@ class App extends React.Component {
     ]
   }
 
-  escutadorDeSubmit = (label: Label) => {
-    console.log(label);
+  remover = (index: number) => {
+    const { labels } = this.state;
+
+    this.setState({
+      labels: labels.filter((label, id) => {
+        return index !== id;
+      })
+    });
   }
 
   render() {
     return (
       <div className="container mb-10">
-        <Etiqueta label = {this.state.labels} escutadorDeSubmit = {this.escutadorDeSubmit} />
+        <Etiqueta label = {this.state.labels} remover = {this.remover} />
       </div>
     );
   }
