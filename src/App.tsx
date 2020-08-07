@@ -28,7 +28,7 @@ class App extends React.Component {
     ]
   }
 
-  remover = (index: number) => {
+  remove = (index: number) => {
     const { labels } = this.state;
 
     this.setState({
@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container mb-10">
-        <Etiqueta label = {this.state.labels} remover = {this.remover} />
+        <Etiqueta label = {this.state.labels} remove = {this.remove} />
       </div>
     );
   }

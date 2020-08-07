@@ -6,17 +6,17 @@ import Label from './index';
 
 interface Props {
     label: Label[]
-    remover: (index: number) => void
+    remove: (index: number) => void
 }
 
 const Etiqueta: React.FC<Props> = (props) => {
 
-    const { label, remover }: Props = props;
+    const { label, remove }: Props = props;
 
     return (
         <>
             <Form />
-            <Lista label = {label} remover = {remover} />
+            <Lista label = {label} remove = {remove} />
         </>
     )
 
