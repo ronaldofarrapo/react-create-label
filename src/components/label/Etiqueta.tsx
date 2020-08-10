@@ -1,22 +1,20 @@
 import React from 'react';
 import Lista from './Lista';
-import Form from './Formulario';
 import Label from './index';
-
+import Filtro from './Filtro';
 
 interface Props {
     label: Label[]
     remove: (index: number) => void
-    add: (label: Label) => void
 }
 
 const Etiqueta: React.FC<Props> = (props) => {
 
-    const { label, remove, add }: Props = props;
+    const { label, remove }: Props = props;
 
     return (
         <>
-            <Form add = {add} />
+            <Filtro />
             <Lista label = {label} remove = {remove} />
         </>
     )

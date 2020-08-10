@@ -1,45 +1,6 @@
 import React from 'react';
 import Label from './index';
 
-
-const TableColors = () => {
-    return (
-        <div className="row">
-            <table className="centered highlight">
-                <tbody>
-                    <tr>
-                        <td className="light-blue lighten-5"></td>
-                        <td className="light-blue lighten-4"></td>
-                        <td className="light-blue lighten-3"></td>
-                        <td className="light-blue lighten-2"></td>
-                        <td className="light-blue lighten-1"></td>
-                        <td className="light-blue"></td>
-                        <td className="light-blue darken-1"></td>
-                    </tr>
-                    <tr>
-                        <td className="cyan lighten-5"></td>
-                        <td className="cyan lighten-4"></td>
-                        <td className="cyan lighten-3"></td>
-                        <td className="cyan lighten-2"></td>
-                        <td className="cyan lighten-1"></td>
-                        <td className="cyan"></td>
-                        <td className="cyan darken-1"></td>
-                    </tr>  
-                </tbody>       
-            </table>
-        </div>
-    )
-}
-
-const LabelChips = () => {
-    return (
-        <div className="chip">
-            Tag
-            <i className="close material-icons">close</i>
-      </div>        
-    )
-}
-
 interface ComponentProps {
     add: (label: Label) => void;
 }

@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container mb-10">
-        <Etiqueta label = {this.state.labels} remove = {this.remove} add = {this.add} />
+        <Etiqueta label = {this.state.labels} remove = {this.remove} />
       </div>
     );
   }
