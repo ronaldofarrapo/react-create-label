@@ -2,7 +2,7 @@ import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
 import './lista.css'
 import Close from '@material-ui/icons/Close'
-import Label from './index'
+import Label from '../index'
 
 interface Props {
     label: Label[]

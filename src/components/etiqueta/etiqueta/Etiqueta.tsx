@@ -1,7 +1,7 @@
 import React from 'react';
-import Lista from './Lista';
-import Label from './index';
-import Filtro from './Filtro';
+import Lista from '../lista';
+import Label from '../index';
+import Filtro from '../filtro';
 
 interface Props {
     label: Label[]

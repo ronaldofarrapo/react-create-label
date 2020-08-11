@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import {Label} from './Label';
+import {Label} from '../Ilabel';
 import Close from '@material-ui/icons/Close'
 
 const LabelChips: React.FC<Props> = (props) => {

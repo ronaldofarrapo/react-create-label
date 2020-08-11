@@ -1,5 +1,5 @@
 import React from 'react';
-import Label from './index';
+import Label from '../index';
 
 interface ComponentProps {
     add: (label: Label) => void;
