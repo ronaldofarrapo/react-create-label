@@ -1,4 +1,4 @@
-export interface Label {
+export interface IEtiqueta {
     text: string
     color: string
 }

@@ -1,48 +1,28 @@
 import React from 'react';
 
 import Etiqueta from './components/etiqueta/etiqueta/Etiqueta';
-import Label from './components/etiqueta';
+import IEtiqueta from './components/etiqueta';
 
 class App extends React.Component {
   
   state = {
-    labels: [
-      {
-        text: 'Red',
-        color: 'red lighten-3'
-      },
-
-      {
-        text: 'Pink',
-        color: 'pink lighten-2'
-      },
-
-      {
-        text: 'purple',
-        color: 'purple lighten-2'
-      },
-
-      {
-        text: 'light-blue',
-        color: 'light-blue lighten-4'
-      }
-    ]
+    etiquetas: [ ]
   }
 
-  add = (label: Label) => {
-    const { labels } = this.state;
+  add = (etiqueta: IEtiqueta) => {
+    const { etiquetas } = this.state;
 
     this.setState({
-      labels: [...labels, label]
+      etiquetas: [...etiquetas, etiqueta]
     })
 
   }
 
   remove = (index: number) => {
-    const { labels } = this.state;
+    const { etiquetas } = this.state;
 
     this.setState({
-      labels: labels.filter((label, id) => {
+      etiquetas: etiquetas.filter((etiqueta, id) => {
         return index !== id;
       })
     });
@@ -50,8 +30,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container mb-10">
-        <Etiqueta label = {this.state.labels} remove = {this.remove} />
+      <div className="container mb-10 row">
+        <div className="col s4">
+          <Etiqueta label = {this.state.etiquetas} remove = {this.remove} add = {this.add} />
+        </div>
       </div>
     );
   }

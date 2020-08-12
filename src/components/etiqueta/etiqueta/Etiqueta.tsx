@@ -1,20 +1,23 @@
 import React from 'react';
 import Lista from '../lista';
-import Label from '../index';
+import IEtiqueta from '../index';
 import Filtro from '../filtro';
+import Formulario from '../formulario';
 
-interface Props {
-    label: Label[]
+export interface EtiquetaProps {
+    label: IEtiqueta[]
     remove: (index: number) => void
+    add: (etiqueta: IEtiqueta) => void
 }
 
-const Etiqueta: React.FC<Props> = (props) => {
+const Etiqueta: React.FC<EtiquetaProps> = (props) => {
 
-    const { label, remove }: Props = props;
+    const { label, remove, add }: EtiquetaProps = props;
 
     return (
         <>
             <Filtro />
+            <Formulario add = {add} />
             <Lista label = {label} remove = {remove} />
         </>
     )

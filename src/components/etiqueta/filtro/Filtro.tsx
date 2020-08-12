@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
-import {Label} from '../Ilabel';
-import Close from '@material-ui/icons/Close'
+import {IEtiqueta} from '../IEtiqueta';
 
 const LabelChips: React.FC<Props> = (props) => {
-    const linhas = props.label.map((linha: Label, index: number) => {
+    const linhas = props.label.map((linha: IEtiqueta, index: number) => {
         return (
             <div className={`chip ${linha.color}`} key={index}>
                 {linha.text}
-                <Close className="close" />
             </div>
         );
     })
@@ -19,37 +17,8 @@ const LabelChips: React.FC<Props> = (props) => {
     )
 }
 
-const TableColors = () => {
-    return (
-        <div className="row">
-            <table className="centered highlight">
-                <tbody>
-                    <tr>
-                        <td className="light-blue lighten-5"></td>
-                        <td className="light-blue lighten-4"></td>
-                        <td className="light-blue lighten-3"></td>
-                        <td className="light-blue lighten-2"></td>
-                        <td className="light-blue lighten-1"></td>
-                        <td className="light-blue"></td>
-                        <td className="light-blue darken-1"></td>
-                    </tr>
-                    <tr>
-                        <td className="cyan lighten-5"></td>
-                        <td className="cyan lighten-4"></td>
-                        <td className="cyan lighten-3"></td>
-                        <td className="cyan lighten-2"></td>
-                        <td className="cyan lighten-1"></td>
-                        <td className="cyan"></td>
-                        <td className="cyan darken-1"></td>
-                    </tr>  
-                </tbody>       
-            </table>
-        </div>
-    )
-}
-
 interface Props {
-    label: Label[]
+    label: IEtiqueta[]
 }
 
 class Filtro extends React.Component {
@@ -95,6 +64,7 @@ class Filtro extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <>
                 <form>

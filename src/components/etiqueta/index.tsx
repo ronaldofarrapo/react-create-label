@@ -1,3 +1,3 @@
-import { Label } from './Ilabel';
+import { IEtiqueta } from './IEtiqueta';
 
-export default Label;
+export default IEtiqueta;

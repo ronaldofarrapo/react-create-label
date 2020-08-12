@@ -1,11 +1,11 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
-import './lista.css'
+import './lista.scss'
 import Close from '@material-ui/icons/Close'
-import Label from '../index'
+import IEtiqueta from '../index'
 
 interface Props {
-    label: Label[]
+    label: IEtiqueta[]
     remove: (index: number) => void
 }
 
@@ -13,7 +13,7 @@ class Lista extends React.Component<Props> {
     render() {
         const { label, remove }: Props = this.props;
 
-        const linhas = label.map((linha: Label, index: number) => {
+        const linhas = label.map((linha: IEtiqueta, index: number) => {
             return(
                 <div className={`chip ${linha.color}`} key={index} onClick={() => {remove(index)}}>
                     {linha.text}
