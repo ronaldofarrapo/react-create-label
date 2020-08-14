@@ -1,5 +1,7 @@
 import React from 'react';
 import IEtiqueta from '../index';
+import sendSVG from '../../../assets/send.svg';
+import {ReactComponent as Audiotrack} from '../../../assets/audiotrack.svg'
 
 const TableColors = (props: TableProps) => {
 
@@ -17,7 +19,10 @@ const TableColors = (props: TableProps) => {
     const linhas = colors.map((linha, index) => {
         return (
             <tr key={index}>
-                <td className={linha.classe} onClick={() => {props.colorListener(linha.classe)}} >{linha.nome}</td>
+                <td className={linha.classe} onClick={() => {props.colorListener(linha.classe)}} >
+                    {linha.nome}
+                    <Audiotrack />
+                </td>
             </tr>  
         )
     })
@@ -99,7 +104,10 @@ class Formulario extends React.Component<ComponentProps, ComponentState> {
                             onChange={this.inputListener} />
                     </div>
                     <TableColors colorListener = {this.colorListener} />
-                    <a className="minhaclasse waves-effect waves-light btn-small" onClick={() => {this.add()}}>Add</a>
+                    <a className="waves-effect waves-light btn-small" onClick={() => {this.add()}}>
+                        Add
+                        <img src={sendSVG} />
+                    </a>
                 </form>
             </>
         )

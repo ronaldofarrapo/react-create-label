@@ -10,8 +10,11 @@
 
 # production
 /dist
+/lib-esm
+/lib
 /build
 /public
+/storybook-static
 
 .idea
 

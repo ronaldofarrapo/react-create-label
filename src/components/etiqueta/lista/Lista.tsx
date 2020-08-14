@@ -1,8 +1,8 @@
 import React from 'react';
-import 'materialize-css/dist/css/materialize.min.css'
-import './lista.scss'
-import Close from '@material-ui/icons/Close'
-import IEtiqueta from '../index'
+import 'materialize-css/dist/css/materialize.min.css';
+import './lista.scss';
+import Close from '@material-ui/icons/Close';
+import IEtiqueta from '../index';
 
 interface Props {
     label: IEtiqueta[]
@@ -15,7 +15,7 @@ class Lista extends React.Component<Props> {
 
         const linhas = label.map((linha: IEtiqueta, index: number) => {
             return(
-                <div className={`chip ${linha.color}`} key={index} onClick={() => {remove(index)}}>
+                <div className={`chip ${linha.color}`} key={index} onClick={() => {this.props.remove(index)}}>
                     {linha.text}
                     <Close className="close" />
                 </div>

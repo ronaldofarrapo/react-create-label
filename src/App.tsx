@@ -22,7 +22,7 @@ class App extends React.Component {
     const { etiquetas } = this.state;
 
     this.setState({
-      etiquetas: etiquetas.filter((etiqueta, id) => {
+      etiquetas: etiquetas.filter((_etiqueta, id) => {
         return index !== id;
       })
     });
