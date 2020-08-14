@@ -12,6 +12,7 @@
 /dist
 /lib-esm
 /lib
+/_bundles
 /build
 /public
 /storybook-static
